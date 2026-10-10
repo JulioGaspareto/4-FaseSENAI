@@ -10,7 +10,7 @@ type Props = {
 };
 
 export default function Register({ onBack, onRegistered }: Props) {
-  // Cada estado acompanha um campo ou uma informação exibida na tela.
+  
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -23,7 +23,7 @@ export default function Register({ onBack, onRegistered }: Props) {
     setBusy(true);
     try {
       const result = await register(name, email, password);
-      // Após salvar no banco, volta ao login e mostra a mensagem da API.
+     
       onRegistered(result.message);
     } catch (error) {
       setError(errorMessage(error));
